@@ -33,13 +33,18 @@ const reducer = (state = {}, action) => {
 
 Wrap your reducer using our `createInfiniteReducer` helper, passing a UNIQUE key and the reducer...
 ```javascript
+import { createInfiniteReducer } from 'infinite-reducer';
+
 const UNIQUE_KEY = 'INFINITE_KEY';
 
 const infiniteReducer = createInfiniteReducer(UNIQUE_KEY, reducer);
 ```
 
-Add your Infinite Reducer anywhere in your store...
+Pass your Infinite Reducer anywhere in your store...
 ```javascript
+import { createStore, combineReducers } from 'redux';
+import infiniteReducer from './reducers';
+
 const reducers = combineReducers({
 	infinite: infiniteReducer,
 });
@@ -60,6 +65,8 @@ const action = payload => ({
 
 Wrap your action using our `createIniniteAction` helper, passing the same UNIQUE key (given to the infinite reducer) and the action...
 ```javascript
+import { createInfiniteAction } from 'infinite-reducer';
+
 // UNIQUE_KEY === 'INFINITE_KEY'
 
 const infiniteAction = createInfiniteAction(UNIQUE_KEY, action);
@@ -70,6 +77,8 @@ Action setup complete!
 ### See it in action!
 Once setup, dispatch the infiniteAction passing a UNIQUE reducer key and any payload the action accepts...
 ```javascript
+import { infiniteAction } from './actions';
+
 const UNIQUE_REDUCER_KEY = 'REDUCER_KEY';
 const payload = { foo: 'bar' };
 
@@ -89,6 +98,8 @@ This will create new state under the UNIQUE reducer key based on the reducer imp
 
 You can create a separate reducer state by passing a new UNIQUE reducer key, while dispatching the same action...
 ```javascript
+import { infiniteAction } from './actions';
+
 const OTHER_UNIQUE_REDUCER_KEY = 'OTHER_REDUCER_KEY';
 const payload = { hello: 'world' };
 
