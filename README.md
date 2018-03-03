@@ -38,11 +38,13 @@ const UNIQUE_KEY = 'INFINITE_KEY';
 const infiniteReducer = createInfiniteReducer(UNIQUE_KEY, reducer);
 ```
 
-Add your Infinite Reducer somewhere in your root reducer...
+Add your Infinite Reducer anywhere in your store...
 ```javascript
-const rootReducer = combineReducers({
+const reducers = combineReducers({
 	infinite: infiniteReducer,
 });
+
+const store = createStore(reducers);
 ```
 
 Reducer setup complete!
@@ -66,7 +68,7 @@ const infiniteAction = createInfiniteAction(UNIQUE_KEY, action);
 Action setup complete!
 
 ### See it in action!
-Once setup, dispatch the infiniteAction, passing a UNIQUE reducer key...
+Once setup, dispatch the infiniteAction passing a UNIQUE reducer key and any payload the action accepts...
 ```javascript
 const UNIQUE_REDUCER_KEY = 'REDUCER_KEY';
 const payload = { foo: 'bar' };
