@@ -1,16 +1,15 @@
 # Infinite Reducer
-> To infinity and beyond!
+> Take your reducers to infinity and beyond!
 
 [![NPM Version](https://img.shields.io/npm/v/infinite-reducer.svg)](https://www.npmjs.com/package/infinite-reducer)
 [![License](https://img.shields.io/npm/l/infinite-reducer.svg)](https://www.npmjs.com/package/infinite-reducer)
 [![Downloads Stats](https://img.shields.io/github/downloads/taekimjr/infinite-reducers/total.svg)](https://www.npmjs.com/package/infinite-reducer)
 
-Infinite Reducer is a Redux library that allows you to reuse your reducer an infinite amount of times.
+Infinite Reducer is a Redux library that allows you to reuse your reducer as many times as you would like.
 
 ## Requirements
 - [React](https://www.npmjs.com/package/react)
 - [Redux](https://www.npmjs.com/package/redux)
-- [Thunk Middleware](https://www.npmjs.com/package/redux-thunk)
 
 ## Installation
 
@@ -18,13 +17,97 @@ Infinite Reducer is a Redux library that allows you to reuse your reducer an inf
 yarn add infinite-reducer
 ```
 
-## Usage example
+## Usage
+### Create your Infinite Reducer
+Starting with a reducer...
+```javascript
+const reducer = (state = {}, action) => {
+	switch (action.type) {
+	    case 'TEST_ACTION':
+	      return action.payload;
+	    default:
+	      return state;
+	}
+};
+```
 
-// TODO: Wrapping your reducers
+Wrap your reducer using our `createInfiniteReducer` helper, passing a UNIQUE key and the reducer...
+```javascript
+const UNIQUE_KEY = 'INFINITE_KEY';
 
-// TODO: Wrapping your actions
+const infiniteReducer = createInfiniteReducer(UNIQUE_KEY, reducer);
+```
 
-// TODO: In action
+Add your Infinite Reducer somewhere in your root reducer...
+```javascript
+const rootReducer = combineReducers({
+	infinite: infiniteReducer,
+});
+```
+
+Reducer setup complete!
+
+### Create your Infinite Action
+Starting with an action that your reducer handles...
+```javascript
+const action = payload => ({
+	type: 'TEST_ACTION',
+	payload,
+});
+```
+
+Wrap your action using our `createIniniteAction` helper, passing the same UNIQUE key (given to the infinite reducer) and the action...
+```javascript
+// UNIQUE_KEY === 'INFINITE_KEY'
+
+const infiniteAction = createInfiniteAction(UNIQUE_KEY, action);
+```
+
+Action setup complete!
+
+### See it in action!
+Once setup, dispatch the infiniteAction, passing a UNIQUE reducer key...
+```javascript
+const UNIQUE_REDUCER_KEY = 'REDUCER_KEY';
+const payload = { foo: 'bar' };
+
+dispatch(infiniteAction(UNIQUE_REDUCER_KEY)(payload))
+```
+
+This will create new state under the UNIQUE reducer key based on the reducer implementation...
+```javascript
+{
+	infinite: {
+		REDUCER_KEY: {
+			foo: 'bar',
+		},
+	},
+}
+```
+
+You can create a separate reducer state by passing a new UNIQUE reducer key, while dispatching the same action...
+```javascript
+const OTHER_UNIQUE_REDUCER_KEY = 'OTHER_REDUCER_KEY';
+const payload = { hello: 'world' };
+
+dispatch(infiniteAction(OTHER_UNIQUE_REDUCER_KEY)(payload))
+```
+
+This will create new state under the new UNIQUE reducer key...
+```javascript
+{
+	infinite: {
+		REDUCER_KEY: {
+			foo: 'bar',
+		},
+		OTHER_REDUCER_KEY: {
+			hello: 'world',
+		},
+	},
+}
+```
+
+BOOM!
 
 ## Meta
 
