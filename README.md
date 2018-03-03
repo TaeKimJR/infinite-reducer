@@ -1,15 +1,16 @@
 # Infinite Reducer
 > To infinity and beyond!
 
-[![NPM Version][npm-image]][npm-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+[![NPM Version](https://img.shields.io/npm/v/infinite-reducer.svg)](https://www.npmjs.com/package/infinite-reducer)
+[![License](https://img.shields.io/npm/l/infinite-reducer.svg)](https://www.npmjs.com/package/infinite-reducer)
+[![Downloads States](https://img.shields.io/github/downloads/taekimjr/infinite-reducers/total.svg)](https://www.npmjs.com/package/infinite-reducer)
 
-Infinite Reducer is a Redux library that allows you to re-use your reducer an infinite amount of times.
+Infinite Reducer is a Redux library that allows you to reuse your reducer an infinite amount of times.
 
 ## Requirements
-- React
-- Redux
-- Thunk middleware
+- [React](https://www.npmjs.com/package/react)
+- [Redux](https://www.npmjs.com/package/redux)
+- [Thunk Middleware](https://www.npmjs.com/package/redux-thunk)
 
 ## Installation
 
@@ -27,7 +28,7 @@ yarn add infinite-reducer
 
 ## Meta
 
-Tae Kim – [@YourTwitter](https://twitter.com/dbader_org) – TaeKimJR@gmail.com
+Tae Kim – [LinkedIn](https://www.linkedin.com/in/taekimjr/) – TaeKimJR@gmail.com
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
