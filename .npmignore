@@ -2,3 +2,6 @@ src
 specs
 examples
 node_modules
+.babelrc
+rollup.config.js
+yarn.lock
