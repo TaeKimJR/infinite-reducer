@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "rollup --config ./rollup.config.js",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn install && yarn build"
   },
   "repository": {
     "type": "git",
