@@ -3,7 +3,7 @@
 
 [![NPM Version](https://img.shields.io/npm/v/infinite-reducer.svg)](https://www.npmjs.com/package/infinite-reducer)
 [![License](https://img.shields.io/npm/l/infinite-reducer.svg)](https://www.npmjs.com/package/infinite-reducer)
-[![Downloads States](https://img.shields.io/github/downloads/taekimjr/infinite-reducers/total.svg)](https://www.npmjs.com/package/infinite-reducer)
+[![Downloads Stats](https://img.shields.io/github/downloads/taekimjr/infinite-reducers/total.svg)](https://www.npmjs.com/package/infinite-reducer)
 
 Infinite Reducer is a Redux library that allows you to reuse your reducer an infinite amount of times.
 
