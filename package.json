@@ -1,6 +1,6 @@
 {
   "name": "infinite-reducer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "To infinity and beyond! Reuse your reducer an infinite amount of times!",
   "main": "dist/index.js",
   "scripts": {
