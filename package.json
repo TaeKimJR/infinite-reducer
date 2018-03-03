@@ -1,0 +1,37 @@
+{
+  "name": "infinite-reducer",
+  "version": "1.0.1",
+  "description": "To infinity and beyond! Reuse your reducer for infinite keys!",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup --config ./rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://TaeKimJR@github.com/TaeKimJR/infinite-reducer.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "reducer",
+    "infinite-reducer"
+  ],
+  "author": "Tae Kim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TaeKimJR/infinite-reducer/issues"
+  },
+  "homepage": "https://github.com/TaeKimJR/infinite-reducer#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.4.2",
+    "rollup": "^0.56.3",
+    "rollup-plugin-babel": "^3.0.3"
+  },
+  "dependencies": {
+    "ramda": "^0.25.0"
+  }
+}
