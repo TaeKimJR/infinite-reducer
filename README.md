@@ -28,11 +28,9 @@ yarn add infinite-reducer
 
 ## Meta
 
-Tae Kim – [LinkedIn](https://www.linkedin.com/in/taekimjr/) – TaeKimJR@gmail.com
+Tae Kim – [Github](https://github.com/TaeKimJR) - [LinkedIn](https://www.linkedin.com/in/taekimjr/) – TaeKimJR@gmail.com
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
-
-[https://github.com/taekimjr](https://github.com/TaeKimJR)
 
 ## Contributing
 1. Fork it (<https://github.com/TaeKimJR/infinite-reducer/fork>)
